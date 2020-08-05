@@ -1,0 +1,16 @@
+7 7
+A 0 0
+B 2 0
+C 4 0
+D 6 0
+E 8 0
+F 4 2
+G 6 2
+7
+A B
+B C
+C D
+D E
+A F
+F G
+G E

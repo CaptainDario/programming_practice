@@ -1,0 +1,6 @@
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_4\Radfahrspass\Radfahrspass\bin\Debug\Radfahrspass.exe.config
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_4\Radfahrspass\Radfahrspass\bin\Debug\Radfahrspass.exe
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_4\Radfahrspass\Radfahrspass\bin\Debug\Radfahrspass.pdb
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_4\Radfahrspass\Radfahrspass\obj\Debug\Radfahrspass.csprojResolveAssemblyReference.cache
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_4\Radfahrspass\Radfahrspass\obj\Debug\Radfahrspass.exe
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_4\Radfahrspass\Radfahrspass\obj\Debug\Radfahrspass.pdb

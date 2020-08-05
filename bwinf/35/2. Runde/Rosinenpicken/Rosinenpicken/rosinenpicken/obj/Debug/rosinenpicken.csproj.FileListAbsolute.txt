@@ -1,0 +1,6 @@
+D:\Informatik\BWINF\2016\2. Runde\Rosinenpicken\rosinenpicken\rosinenpicken\bin\Debug\rosinenpicken.exe.config
+D:\Informatik\BWINF\2016\2. Runde\Rosinenpicken\rosinenpicken\rosinenpicken\bin\Debug\rosinenpicken.exe
+D:\Informatik\BWINF\2016\2. Runde\Rosinenpicken\rosinenpicken\rosinenpicken\bin\Debug\rosinenpicken.pdb
+D:\Informatik\BWINF\2016\2. Runde\Rosinenpicken\rosinenpicken\rosinenpicken\obj\Debug\rosinenpicken.csprojResolveAssemblyReference.cache
+D:\Informatik\BWINF\2016\2. Runde\Rosinenpicken\rosinenpicken\rosinenpicken\obj\Debug\rosinenpicken.exe
+D:\Informatik\BWINF\2016\2. Runde\Rosinenpicken\rosinenpicken\rosinenpicken\obj\Debug\rosinenpicken.pdb

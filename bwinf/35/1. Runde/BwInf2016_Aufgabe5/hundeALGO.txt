@@ -1,0 +1,74 @@
+//ITERATIV
+//ueber alle holes mit dem gleichen x-wert loopen
+            for (int hx = 1; hx < holes.Count; hx++)
+            {
+                //wie viele pathes es momentan gibt
+                int length = allPathesMin.Count;
+
+                for (int i = 0; i < length; i++)
+                {
+                    List<Node> pathToComplete = new List<Node>();
+                    pathToComplete.AddRange(allPathesMin[i].Select(n => n.copy()));
+
+                    //ueber die holes aus den listen mit den gleichen y-werten loopen
+                    for (int hy = 0; hy < holes[hx].Count; hy++)
+                    {
+                        //temporaeren pfad erstellen
+                        List<Node> tmpPath = new List<Node>();
+                        //den bisherigen pfad deep copien
+                        tmpPath.AddRange(pathToComplete.Select(n => n.copy()));
+                        //die jetztigen pfade erweitern
+                        tmpPath.Add(holes[hx][hy]);
+                        //die laenge des vollstaendigen pfades ermitteln
+                        if(holes.Count - 1 < tmpPath.Count)
+                            calculateShortestWay(tmpPath);
+                        //den noch nicht vollstaendigen Pfad speichern um ihn fortzufuehren
+                        else 
+                            allPathesMin.Add(tmpPath);
+                        //Console.WriteLine("hx = " + hx * 70 + " hy = " + hy + " i = " + i);
+                        //Console.WriteLine("tmpPath.Count = " + tmpPath.Count);
+                        //Console.WriteLine("\r\n");
+                    }
+                }
+            //alle weitergefuehrten pathes loeschen
+            //wenn noch nicht alle weitergefuehrt wurden
+            if(hx < holes.Count)
+                allPathesMin.RemoveRange(0, length);   
+            
+            }
+            Console.WriteLine("PATHES = " + allPathesMin.Count);
+
+
+
+//REKURSIV
+if (holes.Count - 1 <= depth)
+            {
+                //
+                solutions++;
+                if (wayLength < shortesWay || shortesWay == 0)
+                {
+                    shortestWayMAX = wayLength;
+                }
+                //den WEG ausgeben
+                for (int i = 0; i < currentWay.Count; i++)
+                {
+                    //Console.Write(currentWay[i].pos.Y);
+                    //if (i != currentWay.Count - 1)
+                        //Console.Write(" --> ");
+                    //else
+                        //Console.Write("\r\n");
+                }            
+                return;
+            }
+            depth++;
+            for (int q = 0; q < holes[depth].Count; q++)
+            {
+                float lasd = holes[depth][q].distance(holes[depth - 1][lastHoles], holes[depth][q]);
+                wayLength += lasd;
+                //
+                currentWay.Add(holes[depth][q].copy());
+                findAllPathes(holes, currentWay, shortesWay, depth, wayLength, q);
+                //
+                currentWay.RemoveAt(currentWay.Count - 1);
+                wayLength -= lasd;
+            }

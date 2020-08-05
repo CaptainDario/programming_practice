@@ -1,0 +1,9 @@
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_2\Rhinozelfant\Rhinozelfant\bin\Debug\Rhinozelfant.exe.config
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_2\Rhinozelfant\Rhinozelfant\bin\Debug\Rhinozelfant.exe
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_2\Rhinozelfant\Rhinozelfant\bin\Debug\Rhinozelfant.pdb
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_2\Rhinozelfant\Rhinozelfant\obj\Debug\Rhinozelfant.csprojResolveAssemblyReference.cache
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_2\Rhinozelfant\Rhinozelfant\obj\Debug\Rhinozelfant.Form1.resources
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_2\Rhinozelfant\Rhinozelfant\obj\Debug\Rhinozelfant.Properties.Resources.resources
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_2\Rhinozelfant\Rhinozelfant\obj\Debug\Rhinozelfant.csproj.GenerateResource.Cache
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_2\Rhinozelfant\Rhinozelfant\obj\Debug\Rhinozelfant.exe
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_2\Rhinozelfant\Rhinozelfant\obj\Debug\Rhinozelfant.pdb

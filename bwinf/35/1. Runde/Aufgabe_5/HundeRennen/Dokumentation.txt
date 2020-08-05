@@ -1,0 +1,12 @@
+Datei einlesen 
+es werden doppelt verkettete Liste fuer die Hunde mit deren Buhnen erstellt 
+und auch einfache Listen
+es werden aus den doppelten listen Kanten fuer einen Kanten bewertenten Graphen erstellt fuer jeden der beiden Hunde
+
+jetzte wird ein sicherer Weg fuer Minni gesucht
+dabei wird sich der jetztige Weg gemerkt
+
+
+Knoten aussuchen minni benoetigte Zeit < Maxi benoetigte Zeit
+
+wenn zurueck auf dem baum die knoten auf active setzten

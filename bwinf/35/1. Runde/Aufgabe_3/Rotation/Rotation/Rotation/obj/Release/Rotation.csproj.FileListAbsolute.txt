@@ -1,0 +1,6 @@
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_3\Rotation\Rotation\Rotation\bin\Release\Rotation.exe.config
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_3\Rotation\Rotation\Rotation\bin\Release\Rotation.exe
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_3\Rotation\Rotation\Rotation\bin\Release\Rotation.pdb
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_3\Rotation\Rotation\Rotation\obj\Release\Rotation.csprojResolveAssemblyReference.cache
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_3\Rotation\Rotation\Rotation\obj\Release\Rotation.exe
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_3\Rotation\Rotation\Rotation\obj\Release\Rotation.pdb

@@ -1,0 +1,8 @@
+D:\Informatik\BWINF\2016\2. Runde\rechtsrum_in_Rechthausen_FORMS\rechtsrum_in_Rechthausen_FORMS\rechtsrum_in_Rechthausen_FORMS\obj\Release\rechtsrum_in_Rechthausen_FORMS.Form1.resources
+D:\Informatik\BWINF\2016\2. Runde\rechtsrum_in_Rechthausen_FORMS\rechtsrum_in_Rechthausen_FORMS\rechtsrum_in_Rechthausen_FORMS\obj\Release\rechtsrum_in_Rechthausen_FORMS.Properties.Resources.resources
+D:\Informatik\BWINF\2016\2. Runde\rechtsrum_in_Rechthausen_FORMS\rechtsrum_in_Rechthausen_FORMS\rechtsrum_in_Rechthausen_FORMS\obj\Release\rechtsrum_in_Rechthausen_FORMS.csproj.GenerateResource.Cache
+D:\Informatik\BWINF\2016\2. Runde\rechtsrum_in_Rechthausen_FORMS\rechtsrum_in_Rechthausen_FORMS\rechtsrum_in_Rechthausen_FORMS\bin\Release\Rechtsherum in Rechthausen.exe.config
+D:\Informatik\BWINF\2016\2. Runde\rechtsrum_in_Rechthausen_FORMS\rechtsrum_in_Rechthausen_FORMS\rechtsrum_in_Rechthausen_FORMS\bin\Release\Rechtsherum in Rechthausen.exe
+D:\Informatik\BWINF\2016\2. Runde\rechtsrum_in_Rechthausen_FORMS\rechtsrum_in_Rechthausen_FORMS\rechtsrum_in_Rechthausen_FORMS\bin\Release\Rechtsherum in Rechthausen.pdb
+D:\Informatik\BWINF\2016\2. Runde\rechtsrum_in_Rechthausen_FORMS\rechtsrum_in_Rechthausen_FORMS\rechtsrum_in_Rechthausen_FORMS\obj\Release\Rechtsherum in Rechthausen.exe
+D:\Informatik\BWINF\2016\2. Runde\rechtsrum_in_Rechthausen_FORMS\rechtsrum_in_Rechthausen_FORMS\rechtsrum_in_Rechthausen_FORMS\obj\Release\Rechtsherum in Rechthausen.pdb

@@ -1,0 +1,9 @@
+D:\BWINF\2016\2. Runde\rechtsrum_in_Rechthausen\rechtsrum_in_Rechthausen\bin\Debug\rechtsrum_in_Rechthausen.exe.config
+D:\BWINF\2016\2. Runde\rechtsrum_in_Rechthausen\rechtsrum_in_Rechthausen\bin\Debug\rechtsrum_in_Rechthausen.exe
+D:\BWINF\2016\2. Runde\rechtsrum_in_Rechthausen\rechtsrum_in_Rechthausen\bin\Debug\rechtsrum_in_Rechthausen.pdb
+D:\BWINF\2016\2. Runde\rechtsrum_in_Rechthausen\rechtsrum_in_Rechthausen\obj\Debug\rechtsrum_in_Rechthausen.exe
+D:\BWINF\2016\2. Runde\rechtsrum_in_Rechthausen\rechtsrum_in_Rechthausen\obj\Debug\rechtsrum_in_Rechthausen.pdb
+D:\BWINF\2016\2. Runde\rechtsrum_in_Rechthausen\rechtsrum_in_Rechthausen\obj\Debug\rechtsrum_in_Rechthausen.csprojResolveAssemblyReference.cache
+D:\Informatik\BWINF\2016\2. Runde\rechtsrum_in_Rechthausen\rechtsrum_in_Rechthausen\bin\Debug\rechtsrum_in_Rechthausen.exe.config
+D:\Informatik\BWINF\2016\2. Runde\rechtsrum_in_Rechthausen\rechtsrum_in_Rechthausen\obj\Debug\rechtsrum_in_Rechthausen.exe
+D:\Informatik\BWINF\2016\2. Runde\rechtsrum_in_Rechthausen\rechtsrum_in_Rechthausen\obj\Debug\rechtsrum_in_Rechthausen.pdb

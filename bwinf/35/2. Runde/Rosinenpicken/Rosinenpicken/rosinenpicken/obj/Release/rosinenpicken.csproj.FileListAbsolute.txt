@@ -1,0 +1,5 @@
+D:\Informatik\BWINF\2016\2. Runde\Rosinenpicken\rosinenpicken\rosinenpicken\bin\Release\rosinenpicken.exe.config
+D:\Informatik\BWINF\2016\2. Runde\Rosinenpicken\rosinenpicken\rosinenpicken\bin\Release\rosinenpicken.exe
+D:\Informatik\BWINF\2016\2. Runde\Rosinenpicken\rosinenpicken\rosinenpicken\bin\Release\rosinenpicken.pdb
+D:\Informatik\BWINF\2016\2. Runde\Rosinenpicken\rosinenpicken\rosinenpicken\obj\Release\rosinenpicken.exe
+D:\Informatik\BWINF\2016\2. Runde\Rosinenpicken\rosinenpicken\rosinenpicken\obj\Release\rosinenpicken.pdb

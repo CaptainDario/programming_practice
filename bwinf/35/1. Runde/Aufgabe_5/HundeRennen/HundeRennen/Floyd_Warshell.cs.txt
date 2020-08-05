@@ -1,0 +1,175 @@
+ //tha table with the distances
+            float[,] dist = new float[_dic.Count, _dic.Count];
+            string[] names = new string[_dic.Count];
+            string[,,] predecessors = new string[_dic.Count, _dic.Count, 2];
+            
+
+            //the height/width of the table
+            int len = _dic.Count ;
+            //the max value for initializing the table
+            int max = int.MaxValue / 2;
+
+            if (debugMode)
+                Console.WriteLine("Initializes table...");
+
+            //Initializes the table with the known values     
+            int x = 0;    
+            foreach (KeyValuePair<String, Crossing> crs in _dic)
+            {
+                int y = 0;
+                names[x] = crs.Key;
+                
+                foreach (KeyValuePair<string, Crossing> crs2 in _dic)
+                {
+                    //if the crossing is connected to the other crossing
+                    if(crs.Value.distances.ContainsKey(crs2.Key))
+                    {
+                        //sets the value 
+                        dist[x, y] = crs.Value.distances[crs2.Key];                    
+
+                        predecessors[x, y, 0] = crs.Key;
+                        predecessors[x, y, 1] = crs2.Key;
+
+                    }
+                    //otherwise set value to max
+                    else
+                    {
+                        if(x == y)
+                            dist[x, y] = 0;
+
+                        else                       
+                            dist[x, y] = max;
+
+                        predecessors[x, y, 0] = "XXX";
+                        predecessors[x, y, 1] = "XXX";             
+                    }                    
+                    y++;       
+                }
+                x++;
+            }
+
+            if (debugMode)
+            {
+                printDistancs(len, names, dist, predecessors);
+                Console.WriteLine("Calculates all shortest pathes...");
+            }
+                
+            //calculates all shortest pathes for every crossing to every crossing
+            for (int k = 0; k < len; k++)
+            {
+                for (int i = 0; i < len; i++)
+                {
+                    for (int j = 0; j < len; j++)
+                    {
+                        //... search shortest paths
+
+                        //diagonale
+                        if (i == j)
+                            continue;
+                        //
+                        if (k == 1 && i == 3 && j == 0)
+                            Console.WriteLine();
+
+                        if (_dic.ContainsKey(predecessors[k, j, 0]) == false)
+                            continue;
+
+
+                        //DEBUG VARS
+                        //DELETE LATER 
+                        string from = names[i];
+                        string last = predecessors[i, k, 0];
+                        string at = predecessors[k, j, 0]; 
+                        string to = names[j];
+
+
+                     
+                        //checks if an allowedconnection from crossing we're coming from
+                        //to crossing we're at exists
+                        if (_dic[predecessors[k, j, 0]].allowedConnections.ContainsKey(predecessors[i, k, 0]))
+                        {
+                            //if the crossing we are currently at has an allowed connection 
+                            //to where we want to go
+                            //considering from where we are coming
+                            if (_dic[predecessors[k, j, 0]].allowedConnections[predecessors[i, k, 0]].Contains(_dic[to]))
+                            {
+
+                                if (dist[i, k] + dist[k, j] < dist[i, j])
+                                {
+                                    dist[i, j] = dist[i, k] + dist[k, j];
+
+                                    //ueber der diagonale
+                                    if (j > i)
+                                    {
+                                        predecessors[i, j, 0] = names[k];
+                                        predecessors[i, j, 1] = names[j];
+                                    }
+                                    //unter der diagonale
+                                    else
+                                    {
+                                        predecessors[i, j, 0] = names[i];
+                                        predecessors[i, j, 1] = names[k];
+                                    }
+
+                                if (debugMode)
+                                        printDistancs(len, names, dist, predecessors);
+                                }
+                            }
+                        }                       
+                    }
+                }
+            }
+
+            if (debugMode)
+                this.printDistancs(len, names, dist, predecessors);
+
+
+            Console.WriteLine();
+            //return the table with the calculated distances
+
+
+
+    public void printDistancs(int len, string[] names, float[,] dist, string[,,] preds)
+        {
+            Console.WriteLine("Distances");
+            Console.WriteLine("");
+
+            bool iEqualsZero = true;
+            for (int i = 0; i < len + 1; ++i)
+            {
+                for (int j = 0; j < len + 1; ++j)
+                {
+                    if ((i == 0 || j == 0) && i != len && j != len)
+                    {
+                        if (i == 0)
+                            Console.Write(names[j].PadLeft(25));
+                        else
+                        {
+                            if (iEqualsZero)
+                            {
+                                Console.Write(names[0]);
+                                iEqualsZero = false;
+                            }
+                        }
+
+                        continue;
+                    }
+
+                    if (i == 0 || j == 0)
+                        continue;
+
+                    if (i != len + 1 && j != len + 1 && dist[i - 1, j - 1] > 1000)
+                        Console.Write("INF".PadLeft(25));
+
+                    else
+                        Console.Write((Math.Round(dist[i - 1, j - 1], 3).ToString() +
+                                        " - " + preds[i - 1, j - 1, 0] + " Over " + preds[i - 1, j - 1, 1]).PadLeft(25));
+                }
+
+                Console.WriteLine();
+                if (!iEqualsZero && i != len)
+                {
+                    Console.Write(names[i]);
+                }
+            }
+        }
+    }

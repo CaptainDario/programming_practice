@@ -1,0 +1,236 @@
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+using System.IO;
+using System.Linq;
+
+namespace BwInf2016_Aufgabe5
+{
+    public partial class Form1 : Form
+    {
+        //der Datei Pfad
+        string path = "";
+        //alle Loecher
+        List<List<Node>> holes = new List<List<Node>>();
+        //alle pfade fuer maxi
+        List<List<Node>> allPathesMax = new List<List<Node>>(){new List<Node>()};
+        //alle pfade fuer minni
+        List<List<Node>> allPathesMin = new List<List<Node>>(){new List<Node>()};
+        Node maxisStart;
+        Node minnisStart;
+
+        Graphics g;
+        //die verschiedenen stifte zum zeichnen
+        Pen black;
+        Pen blue;
+        Pen white;
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            black = new Pen(Color.Black, 2F);          
+            blue = new Pen(Color.Blue, 2f);
+            white = new Pen(Color.White, 2f);
+
+            this.DoubleBuffered = true;
+
+            pictureBox1.Size = new Size(this.Width, this.Height - 100);
+            g = pictureBox1.CreateGraphics();
+
+        }
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            path = textBox1.Text;
+            if (File.Exists(path))
+            {
+                //alle werte zurueksetzen um das programm nicht immer schliessen zu muessen
+                holes = new List<List<Node>>();
+                g.Clear(Color.Yellow);
+                //
+                createAllHoles();
+                //alle moeglichen Pfade fuer maxi und minni finden
+                findAllPathes();
+                //alle loecher zeichnen
+                drawHoles();
+                //alle 50 Einheiten eine linie zeichnen
+                drawLines();
+            }
+            
+            else
+                textBox1.Text = "No such File or directory";
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        //aus der Input datei die Holes creieren
+        void createAllHoles()
+        {
+            var lines = File.ReadLines(path);
+            foreach (var line in lines)
+            {
+                //Die Art des NODES
+                int index1 = line.IndexOf(' ');
+                string node = line.Substring(0, index1);
+
+                //Die x-pos des NODES
+                int index2 = line.IndexOf(' ', index1 + 1);
+                int nodeX = int.Parse(line.Substring(index1, index2));
+
+                //die y-pos des NODES
+                float nodeY = float.Parse(line.Substring(index2 + 1), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.NumberFormatInfo.InvariantInfo);
+
+                //neuen NODE erstellen
+                Node tmpNode = new Node();
+                //erberpruefen ob es schon eine liste fuer dieses x-position gibt
+                if (holes.Count <= (nodeX / 70))
+                    holes.Add(new List<Node>());
+                switch (node)
+                {
+                    case "X":
+                        Console.WriteLine("MAXI START");                      
+                        maxisStart = tmpNode;
+                        maxisStart.init(nodeX, nodeY, 2, 0);
+
+                        allPathesMax[0].Add(maxisStart);
+                        break;
+                    case "M":
+                        Console.WriteLine("MINNI START");
+                        minnisStart = tmpNode;
+                        minnisStart.init(nodeX, nodeY, 2, 1);
+                        allPathesMin[0].Add(minnisStart);
+                        break;
+                    case "x":
+                        tmpNode.init(nodeX, nodeY, 2, 2);
+                        holes[nodeX / 70].Add(tmpNode);
+                        break;
+                    case "m":
+                        tmpNode.init(nodeX, nodeY, 1, 2);
+                        holes[nodeX / 70].Add(tmpNode);
+                        break;
+                }                      
+            }
+        }
+        //alle pfade erstellen
+        void findAllPathes()
+        {
+            //ueber alle holes mit dem gleichen x-wert loopen
+            for (int hx = 1; hx < holes.Count; hx++)
+            {
+                //wie viele pathes es momentan gibt
+                int length = allPathesMin.Count;
+
+                for (int i = 0; i < length; i++)
+                {
+                    List<Node> pathToComplete = new List<Node>();
+                    pathToComplete.AddRange(allPathesMin[i].Select(n => n.copy()));
+
+                    //ueber die holes aus den listen mit den gleichen y-werten loopen
+                    for (int hy = 0; hy < holes[hx].Count; hy++)
+                    {
+                        //temporaeren pfad erstellen
+                        List<Node> tmpPath = new List<Node>();
+                        //den bisherigen pfad deep copien
+                        tmpPath.AddRange(pathToComplete.Select(n => n.copy()));
+                        //die jetztigen pfade erweitern
+                        tmpPath.Add(holes[hx][hy]);
+                        //den neuen Pfad allen hinzufuegen um ihn fortzufuehren
+                        allPathesMin.Add(tmpPath);
+                    }
+                }
+            //alle weitergefuehrten pathes loeschen
+            //wenn noch nicht alle weitergefuehrt wurden
+            if(hx < holes.Count)
+                allPathesMin.RemoveRange(0, length);   
+            
+            }
+            Console.WriteLine("PATHES = " + allPathesMin.Count);
+        }
+        //die laenge desWeges berechnen
+        void calculateShortestWay(List<List<Node>> pathes)
+        {
+            for (int i = 0; i < pathes.Count; i++)
+            {
+                for (int j = 0;  j < pathes[i].Count;  j++)
+                {
+
+                }
+            }
+        }
+        //die holes zeichnen
+        void drawHoles()
+        {
+            //MAXI
+            g.DrawEllipse(blue, maxisStart.posX - 5, (int)maxisStart.posY - 5, 10, 10);
+            g.DrawRectangle(new Pen(Color.Red, 2f), maxisStart.posX, (int)maxisStart.posY, 1, 1);
+            //MINNI
+            g.DrawEllipse(white, minnisStart.posX - 5, (int)minnisStart.posY - 5, 10, 10);
+            g.DrawRectangle(new Pen(Color.Red, 2f), minnisStart.posX, (int)minnisStart.posY, 1, 1);
+
+            for (int x = 0; x < holes.Count; x++)
+            {
+                for (int y = 0; y < holes[x].Count; y++)
+                {                   
+                    //MAXI HOLES
+                    if (holes[x][y].width == 2)
+                    {
+                        g.DrawEllipse(black, holes[x][y].posX - 5, holes[x][y].posY - 10, 10, 20);
+                        g.DrawRectangle(new Pen(Color.Red, 2f), holes[x][y].posX, ((int)holes[x][y].posY), 1,1);
+                    }
+                    //MINI HOLES             
+                    else
+                    {
+                        g.DrawEllipse(black, holes[x][y].posX - 5, holes[x][y].posY - 5, 10, 10);
+                        g.DrawRectangle(new Pen(Color.Red, 2f), holes[x][y].posX, ((int)holes[x][y].posY), 1,1);
+                    }
+                }
+            }
+        }
+        //horizontale linie zeichnen alle 50 Einheiten
+        void drawLines()
+        {
+            for (int x = 0; x < pictureBox1.Height; x += 70)
+            {          
+                g.DrawLine(new Pen (Color.Gray, 1f), new Point(x, 0), new Point(x, pictureBox1.Height));
+                g.DrawLine(new Pen(Color.Gray, 1f), new Point(0, x), new Point(pictureBox1.Width, x));
+            }       
+        }
+    }
+
+    public class Node
+    {
+        //0  -->  Maxisstart  ||  1  -->  Minnisstart  ||  2  --  hole
+        public int type;
+        public int posX;
+        public float posY;
+        public int width;
+
+        public void init(int x, float y, int w, int typ)
+        {
+            posX = x;
+            posY = y;
+            width = w;
+            type = typ;
+        }
+        public Node copy()
+        {
+            return (Node)this.MemberwiseClone();
+        }
+    }
+}
+
+

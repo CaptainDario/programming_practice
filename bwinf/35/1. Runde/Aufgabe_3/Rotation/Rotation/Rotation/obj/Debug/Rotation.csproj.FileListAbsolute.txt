@@ -1,0 +1,5 @@
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_3\Rotation.exe.config
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_3\Rotation\Rotation\Rotation\obj\Debug\Rotation.exe
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_3\Rotation\Rotation\Rotation\obj\Debug\Rotation.pdb
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_3\Rotation.exe
+C:\Users\Dario\Documents\BWINF\2016\Aufgabe_3\Rotation.pdb

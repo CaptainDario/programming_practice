@@ -1,0 +1,27 @@
+13 12
+A 3 8
+B 2 6
+C 3 6
+D 5 6
+E 3 5
+F 2 3
+G 3 3
+H 3 1
+I 5 3
+J 7 3
+K 9 3
+L 7 5
+M 7 2
+12
+A C
+B C
+D C
+E C
+E G
+F G
+H G
+G I
+I J
+L J
+J M
+J K
