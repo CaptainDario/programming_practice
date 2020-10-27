@@ -13,5 +13,7 @@ Contents:
   * sorting algorithms
 * OpenMPI
   * openMPI programs
+* ASP
+  * Answer Set Programming programs
 * misc
   * different practices
