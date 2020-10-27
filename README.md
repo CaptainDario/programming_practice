@@ -9,3 +9,9 @@ Contents:
   * this are different algorithms which got developed for the BWINF contest
 * coderbyte
   * this contains programming challenges from the website coderbyte
+* sorting
+  * sorting algorithms
+* OpenMPI
+  * openMPI programs
+* misc
+  * different practices
